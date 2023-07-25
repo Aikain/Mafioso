@@ -6,4 +6,9 @@
     <string name="create_game_name_label">Anna pelille nimi</string>
     <string name="create_game_btn">Luo peli</string>
     <string name="games_empty">Yhtään peliä ei löytynyt</string>
+    <string name="game_exit_confirm_title">Haluatko varmasti poistua?</string>
+    <string name="game_exit_confirm_btn">Poistu pelistä</string>
+    <string name="game_exit_dismiss_btn">Jatka peliä</string>
+    <string name="game_exit_leader_text">Mikäli poistut pelistä, lopetetaan peli kokonaan kaikilta pelaajilta.</string>
+    <string name="game_exit_normal_text">Mikäli poistut pelistä, paljastetaan roolisi etkä voi enää palata peliin.</string>
 </resources>

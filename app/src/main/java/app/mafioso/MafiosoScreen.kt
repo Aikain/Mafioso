@@ -30,27 +30,45 @@ fun MafiosoApp(
     ) {
         composable(route = MafiosoScreen.HOME.name) {
             HomeScreen(
-                goToCreateGameScreen = { navController.navigate(MafiosoScreen.CREATE_GAME.name) },
-                goToJoinGameScreen = { navController.navigate(MafiosoScreen.JOIN_GAME.name) },
+                goToCreateGameScreen = { navController.navigate(route = MafiosoScreen.CREATE_GAME.name) },
+                goToJoinGameScreen = { navController.navigate(route = MafiosoScreen.JOIN_GAME.name) },
             )
         }
         composable(route = MafiosoScreen.CREATE_GAME.name) {
             CreateGameScreen(
-                backToHomeScreen = { navController.popBackStack(MafiosoScreen.HOME.name, inclusive = false) },
-                goToCreateGameScreen = { navController.navigate(MafiosoScreen.GAME.name + "/" + it) },
+                backToHomeScreen = {
+                    navController.popBackStack(
+                        route = MafiosoScreen.HOME.name,
+                        inclusive = false
+                    )
+                },
+                goToCreateGameScreen = { navController.navigate(route = MafiosoScreen.GAME.name + "/" + it) },
             )
         }
         composable(route = MafiosoScreen.JOIN_GAME.name) {
             JoinGameScreen(
-                backToHomeScreen = { navController.popBackStack(MafiosoScreen.HOME.name, inclusive = false) },
-                goToCreateGameScreen = { navController.navigate(MafiosoScreen.GAME.name + "/" + it) },
+                backToHomeScreen = {
+                    navController.popBackStack(
+                        route = MafiosoScreen.HOME.name,
+                        inclusive = false
+                    )
+                },
+                goToCreateGameScreen = { navController.navigate(route = MafiosoScreen.GAME.name + "/" + it) },
             )
         }
         composable(
             route = MafiosoScreen.GAME.name + "/{gameId}",
             arguments = listOf(navArgument("gameId") { type = NavType.StringType }),
         ) {
-            GameScreen(UUID.fromString(it.arguments?.getString("gameId")))
+            GameScreen(
+                gameId = UUID.fromString(it.arguments?.getString("gameId")),
+                backToHomeScreen = {
+                    navController.popBackStack(
+                        route = MafiosoScreen.HOME.name,
+                        inclusive = false
+                    )
+                }
+            )
         }
     }
 }

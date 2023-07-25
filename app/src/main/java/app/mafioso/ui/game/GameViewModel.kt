@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.asStateFlow
 data class GameUiState(
     val id: Int = 0,
     val name: String = "",
+    val leader: Boolean = false,
 )
 
 class GameViewModel : ViewModel() {
