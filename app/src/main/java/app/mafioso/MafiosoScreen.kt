@@ -2,13 +2,16 @@ package app.mafioso
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import app.mafioso.ui.HomeScreen
 import app.mafioso.ui.create.CreateGameScreen
 import app.mafioso.ui.game.GameScreen
 import app.mafioso.ui.join.JoinGameScreen
+import java.util.UUID
 
 enum class MafiosoScreen() {
     HOME,
@@ -32,13 +35,22 @@ fun MafiosoApp(
             )
         }
         composable(route = MafiosoScreen.CREATE_GAME.name) {
-            CreateGameScreen()
+            CreateGameScreen(
+                backToHomeScreen = { navController.popBackStack(MafiosoScreen.HOME.name, inclusive = false) },
+                goToCreateGameScreen = { navController.navigate(MafiosoScreen.GAME.name + "/" + it) },
+            )
         }
         composable(route = MafiosoScreen.JOIN_GAME.name) {
-            JoinGameScreen()
+            JoinGameScreen(
+                backToHomeScreen = { navController.popBackStack(MafiosoScreen.HOME.name, inclusive = false) },
+                goToCreateGameScreen = { navController.navigate(MafiosoScreen.GAME.name + "/" + it) },
+            )
         }
-        composable(route = MafiosoScreen.GAME.name) {
-            GameScreen()
+        composable(
+            route = MafiosoScreen.GAME.name + "/{gameId}",
+            arguments = listOf(navArgument("gameId") { type = NavType.StringType }),
+        ) {
+            GameScreen(UUID.fromString(it.arguments?.getString("gameId")))
         }
     }
 }
