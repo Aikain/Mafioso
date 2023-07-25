@@ -5,10 +5,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import app.mafioso.ui.CreateGameScreen
-import app.mafioso.ui.GameScreen
 import app.mafioso.ui.HomeScreen
-import app.mafioso.ui.JoinGameScreen
+import app.mafioso.ui.create.CreateGameScreen
+import app.mafioso.ui.game.GameScreen
+import app.mafioso.ui.join.JoinGameScreen
 
 enum class MafiosoScreen() {
     HOME,
@@ -19,7 +19,7 @@ enum class MafiosoScreen() {
 
 @Composable
 fun MafiosoApp(
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
 ) {
     NavHost(
         navController = navController,

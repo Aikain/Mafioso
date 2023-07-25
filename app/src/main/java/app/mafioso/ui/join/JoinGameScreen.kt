@@ -1,15 +1,15 @@
-package app.mafioso.ui
+package app.mafioso.ui.join
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun CreateGameScreen(
+fun JoinGameScreen(
     modifier: Modifier = Modifier,
 ) {
     Text(
-        text = "CreateGameScreen",
+        text = "JoinGameScreen",
         modifier = modifier
     )
 }
