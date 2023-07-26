@@ -1,17 +1,22 @@
 package app.mafioso.role
 
 import app.mafioso.R
+import app.mafioso.data.Game
 
 class Mafia : Role() {
 
-    override fun getName(): String = "Mafia"
-
-    override fun getDescription(): String = "Lorem ipsum"
-
+    override fun getName(): Int = R.string.mafia_name
+    override fun getDescription(): Int = R.string.mafia_description
     override fun getImage(): Int = R.drawable.mafia
 
-    override fun wakeUpAtNight(night: Int): Boolean = true
+    override fun checkWin(game: Game): Boolean {
+        game.getAlivePlayers().forEach {
+            if (it.role !is Mafia) return false
+        }
+        return game.getAlivePlayers().isNotEmpty()
+    }
 
+    override fun wakeUpAtNight(night: Int): Boolean = true
     override fun wakeUpPriority(): Int = 50
 
     companion object : RoleCompanion {

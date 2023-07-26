@@ -1,14 +1,20 @@
 package app.mafioso.role
 
 import app.mafioso.R
+import app.mafioso.data.Game
 
-class Villager : Role() {
+open class Villager : Role() {
 
-    override fun getName(): String = "Kyläläinen"
-
-    override fun getDescription(): String = "Lorem ipsum"
-
+    override fun getName(): Int = R.string.villager_name
+    override fun getDescription(): Int = R.string.villager_description
     override fun getImage(): Int = R.drawable.villager
+
+    override fun checkWin(game: Game): Boolean {
+        game.getAlivePlayers().forEach {
+            if (it.role !is Villager) return false
+        }
+        return game.getAlivePlayers().isNotEmpty()
+    }
 
     override fun wakeUpAtNight(night: Int): Boolean = false
 

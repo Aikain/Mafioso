@@ -1,5 +1,7 @@
 package app.mafioso.role
 
+import app.mafioso.data.Game
+
 interface RoleCompanion {
     fun createRoles(playerCount: Int): List<Role>
 }
@@ -7,9 +9,11 @@ interface RoleCompanion {
 
 abstract class Role {
 
-    abstract fun getName(): String
-    abstract fun getDescription(): String
+    abstract fun getName(): Int
+    abstract fun getDescription(): Int
     abstract fun getImage(): Int
+
+    abstract fun checkWin(game: Game): Boolean
 
     abstract fun wakeUpAtNight(night: Int): Boolean
     open fun wakeUpPriority(): Int = 0

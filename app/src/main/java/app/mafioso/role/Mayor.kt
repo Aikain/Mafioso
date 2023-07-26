@@ -2,15 +2,11 @@ package app.mafioso.role
 
 import app.mafioso.R
 
-class Mayor : Role() {
+class Mayor : Villager() {
 
-    override fun getName(): String = "Pormestari"
-
-    override fun getDescription(): String = "Lorem ipsum"
-
+    override fun getName(): Int = R.string.mayor_name
+    override fun getDescription(): Int = R.string.mayor_description
     override fun getImage(): Int = R.drawable.mayor
-
-    override fun wakeUpAtNight(night: Int): Boolean = false
 
     companion object : RoleCompanion {
         override fun createRoles(playerCount: Int): List<Role> =

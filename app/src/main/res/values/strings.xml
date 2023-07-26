@@ -18,4 +18,33 @@
     <string name="add_player_max_length_error">Nimi saa olla enintään %s merkkiä!</string>
     <string name="add_plaeyer_btn">Lisää pelaaja</string>
     <string name="start_game_btn">Aloita peli</string>
+    <string name="killed">Tapettu</string>
+    <string name="close_btn">Sulje</string>
+    <string name="remove_player_btn">Poista pelaaja</string>
+    <string name="back_to_home_btn">Siirry aloitusnäkymään</string>
+    <string name="game_over">Peli ohi</string>
+
+    <string name="crazy_name">Hullu</string>
+    <string name="crazy_description">Et malta mennä nukkumaan vaa lähdet huitomaan kirveellä yhden kuoliaaksi yön aikana.</string>
+
+    <string name="cupid_name">Amor</string>
+    <string name="cupid_description">Ensimmäisenä yönä päätät kaksi rakastavaista, jotka eivät kuole ilman toista.</string>
+
+    <string name="jesus_name">Jeesus</string>
+    <string name="jesus_description">Nouset kolmantena pivänä kuolleista.</string>
+
+    <string name="mafia_name">Mafia</string>
+    <string name="mafia_description">Yön aikana teloitatte yhdessä tuumin yhden kylän asukkaista hallitaksenne kylää.</string>
+
+    <string name="mayor_name">Pormestari</string>
+    <string name="mayor_description">Sinut on valittu johtamaan kansaa. Täten äänesi on kuuluvampi ja ratkaiset tasatilanteet.</string>
+
+    <string name="nurse_name">Hoitaja</string>
+    <string name="nurse_description">Sinulla on mahdollisuus pelastaa yksi kyläläinen kuolemalta yön aikana.</string>
+
+    <string name="police_name">Poliisi</string>
+    <string name="police_description">Yön aikana saat mahdollisuuden selvittää yhden henkilön todellisten luonteen.</string>
+
+    <string name="villager_name">Kansa</string>
+    <string name="villager_description">Olet tavallinen kansalainen. Nukut sikeästi koko yön.</string>
 </resources>
