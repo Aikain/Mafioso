@@ -51,6 +51,7 @@ class GameViewModel(
     fun startGame() {
         _uiState.update {
             it.copy(
+                game = it.game.initializeRoles(),
                 status = Status.RUNNING,
                 phase = Phase.SUNSET,
             )
