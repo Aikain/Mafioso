@@ -1,0 +1,53 @@
+.underConstruction {
+    display: flex;
+    justify-content: center;
+
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ffce96;
+
+    .image {
+        position: relative;
+        width: 1024px;
+
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    h1 {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+
+        color: #000000;
+        font-size: 4rem;
+        text-align: center;
+
+        background: white;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+
+        box-shadow: 0 10px 6px -6px #777;
+    }
+
+    .image::before,
+    .image::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 50px;
+        height: 100%;
+        top: 0;
+    }
+
+    .image::before {
+        background: linear-gradient(to right, rgba(255, 206, 150, 1), rgba(255, 206, 150, 0));
+        left: 0;
+    }
+
+    .image::after {
+        background: linear-gradient(to left, rgba(255, 206, 150, 1), rgba(255, 206, 150, 0));
+        right: 0;
+    }
+}
