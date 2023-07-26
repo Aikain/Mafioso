@@ -11,4 +11,11 @@
     <string name="game_exit_dismiss_btn">Jatka peliä</string>
     <string name="game_exit_leader_text">Mikäli poistut pelistä, lopetetaan peli kokonaan kaikilta pelaajilta.</string>
     <string name="game_exit_normal_text">Mikäli poistut pelistä, paljastetaan roolisi etkä voi enää palata peliin.</string>
+    <string name="add_player_title">Lisää uusi pelaaja</string>
+    <string name="add_player_name_label">Pelaajan nimi</string>
+    <string name="add_player_confirm_btn">Lisää pelaaja</string>
+    <string name="add_player_dismiss_btn">Peruuta</string>
+    <string name="add_player_max_length_error">Nimi saa olla enintään %s merkkiä!</string>
+    <string name="add_plaeyer_btn">Lisää pelaaja</string>
+    <string name="start_game_btn">Aloita peli</string>
 </resources>

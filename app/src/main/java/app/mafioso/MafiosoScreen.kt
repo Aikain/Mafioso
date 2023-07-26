@@ -61,7 +61,6 @@ fun MafiosoApp(
             arguments = listOf(navArgument("gameId") { type = NavType.StringType }),
         ) {
             GameScreen(
-                gameId = UUID.fromString(it.arguments?.getString("gameId")),
                 backToHomeScreen = {
                     navController.popBackStack(
                         route = MafiosoScreen.HOME.name,
