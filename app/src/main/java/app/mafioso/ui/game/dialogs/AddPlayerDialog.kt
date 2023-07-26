@@ -16,7 +16,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import app.mafioso.R
 
-const val MAX_NAME_LENGTH = 12;
+const val MAX_NAME_LENGTH = 12
 
 @Composable
 fun AddPlayerDialog(

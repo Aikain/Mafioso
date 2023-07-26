@@ -23,6 +23,7 @@
     <string name="remove_player_btn">Poista pelaaja</string>
     <string name="back_to_home_btn">Siirry aloitusnäkymään</string>
     <string name="game_over">Peli ohi</string>
+    <string name="join_game">Liity peliin</string>
 
     <string name="crazy_name">Hullu</string>
     <string name="crazy_description">Et malta mennä nukkumaan vaa lähdet huitomaan kirveellä yhden kuoliaaksi yön aikana.</string>

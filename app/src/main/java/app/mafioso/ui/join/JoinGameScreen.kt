@@ -76,7 +76,7 @@ fun GameList(
         verticalArrangement = Arrangement.spacedBy(32.dp),
     ) {
         Text(
-            text = "Liity peliin",
+            text = stringResource(R.string.join_game),
             fontSize = 32.sp,
             modifier = Modifier
         )

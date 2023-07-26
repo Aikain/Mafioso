@@ -11,9 +11,8 @@ import app.mafioso.ui.HomeScreen
 import app.mafioso.ui.create.CreateGameScreen
 import app.mafioso.ui.game.GameScreen
 import app.mafioso.ui.join.JoinGameScreen
-import java.util.UUID
 
-enum class MafiosoScreen() {
+enum class MafiosoScreen {
     HOME,
     CREATE_GAME,
     JOIN_GAME,
