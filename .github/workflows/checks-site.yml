@@ -45,7 +45,7 @@ jobs:
       - name: Upload analysis results to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: eslint-results.sarif
+          sarif_file: site/eslint-results.sarif
 
   ts-check:
     runs-on: ubuntu-latest
