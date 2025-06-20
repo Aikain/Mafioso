@@ -10,34 +10,29 @@
         "postinstall": "next telemetry disable",
         "lint": "next lint",
         "ts:check": "tsc --noemit",
-        "prettier": "prettier --write 'src/**/*.{ts,tsx,scss}' package.json prettier.config.mjs tsconfig.json"
+        "prettier": "prettier --write 'src/**/*.{ts,tsx,scss}' '*.{m,}{j,t}s' package.json tsconfig.json"
     },
     "dependencies": {
-        "next": "15.2.4",
-        "react": "19.0.0",
-        "react-dom": "19.0.0",
-        "sharp": "^0.33.5"
+        "@types/node": "22.15.32",
+        "@types/react": "19.1.8",
+        "@types/react-dom": "19.1.6",
+        "eslint": "^9.29.0",
+        "eslint-config-next": "15.3.4",
+        "next": "15.3.4",
+        "react": "19.1.0",
+        "react-dom": "19.1.0",
+        "sharp": "^0.34.2",
+        "typescript": "5.8.3"
     },
     "devDependencies": {
-        "@eslint/eslintrc": "^3.2.0",
-        "@next/eslint-plugin-next": "^15.1.1",
-        "@trivago/prettier-plugin-sort-imports": "^5.2.0",
-        "@types/node": "22.10.2",
-        "@types/react": "19.0.2",
-        "@types/react-dom": "19.0.2",
-        "eslint": "^9.17.0",
-        "eslint-config-next": "15.1.1",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-compat": "^6.0.2",
-        "eslint-plugin-prettier": "^5.2.1",
-        "prettier": "3.4.2",
-        "prettier-eslint": "^16.3.0",
-        "sass": "^1.83.0",
-        "typescript": "5.7.2",
-        "typescript-eslint": "^8.18.1"
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+        "eslint-config-prettier": "^10.1.5",
+        "prettier": "3.5.3",
+        "prettier-eslint": "^16.4.2",
+        "sass": "^1.89.2"
     },
     "resolutions": {
-        "@types/react": "19.0.2",
-        "@types/react-dom": "19.0.2"
+        "@types/react": "19.1.8",
+        "@types/react-dom": "19.1.6"
     }
 }
