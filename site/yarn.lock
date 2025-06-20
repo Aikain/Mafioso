@@ -4622,7 +4622,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.34.1, sharp@npm:^0.34.2":
+"sharp@npm:^0.34.1":
   version: 0.34.2
   resolution: "sharp@npm:0.34.2"
   dependencies:
@@ -4798,7 +4798,6 @@ __metadata:
     react: "npm:19.1.0"
     react-dom: "npm:19.1.0"
     sass: "npm:^1.89.2"
-    sharp: "npm:^0.34.2"
     typescript: "npm:5.8.3"
     typescript-eslint: "npm:^8.34.1"
   languageName: unknown

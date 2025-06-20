@@ -19,7 +19,7 @@
         "next": "15.3.4",
         "react": "19.1.0",
         "react-dom": "19.1.0",
-        "sharp": "^0.34.2",
+        "sass": "^1.89.2",
         "typescript": "5.8.3"
     },
     "devDependencies": {
@@ -33,7 +33,6 @@
         "eslint-plugin-prettier": "^5.5.0",
         "prettier": "3.5.3",
         "prettier-eslint": "^16.4.2",
-        "sass": "^1.89.2",
         "typescript-eslint": "^8.34.1"
     }
 }
