@@ -16,8 +16,6 @@
         "@types/node": "22.15.32",
         "@types/react": "19.1.8",
         "@types/react-dom": "19.1.6",
-        "eslint": "^9.29.0",
-        "eslint-config-next": "15.3.4",
         "next": "15.3.4",
         "react": "19.1.0",
         "react-dom": "19.1.0",
@@ -25,14 +23,16 @@
         "typescript": "5.8.3"
     },
     "devDependencies": {
+        "@next/eslint-plugin-next": "^15.3.4",
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+        "eslint": "^9.29.0",
+        "eslint-config-next": "15.3.4",
         "eslint-config-prettier": "^10.1.5",
+        "eslint-plugin-compat": "^6.0.2",
+        "eslint-plugin-prettier": "^5.5.0",
         "prettier": "3.5.3",
         "prettier-eslint": "^16.4.2",
-        "sass": "^1.89.2"
-    },
-    "resolutions": {
-        "@types/react": "19.1.8",
-        "@types/react-dom": "19.1.6"
+        "sass": "^1.89.2",
+        "typescript-eslint": "^8.34.1"
     }
 }
