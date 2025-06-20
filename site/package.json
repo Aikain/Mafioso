@@ -23,6 +23,7 @@
         "typescript": "5.8.3"
     },
     "devDependencies": {
+        "@microsoft/eslint-formatter-sarif": "^3.1.0",
         "@next/eslint-plugin-next": "^15.3.4",
         "@trivago/prettier-plugin-sort-imports": "^5.2.2",
         "eslint": "^9.29.0",
