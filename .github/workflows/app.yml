@@ -54,3 +54,37 @@ jobs:
           name: app-bundle
           path: app/build/outputs/bundle/release/app-release.aab
           retention-days: 2
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download app bundle from artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: app-bundle
+          path: ${{ github.workspace }}
+
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          project_id: aikain-mafioso
+          workload_identity_provider: projects/184973361127/locations/global/workloadIdentityPools/github/providers/github
+          service_account: github-actions@aikain-mafioso.iam.gserviceaccount.com
+
+      - name: Publish to Play Store
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJson: ${{ steps.auth.outputs.credentials_file_path }}
+          packageName: app.mafioso
+          releaseFiles: ${{ github.workspace }}/app-release.aab
+          track: internal

@@ -73,3 +73,6 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+# Ignore generated credentials from google-github-actions/auth
+gha-creds-*.json
