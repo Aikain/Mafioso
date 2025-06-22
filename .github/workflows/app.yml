@@ -1,0 +1,56 @@
+name: Build and publish app
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'app/**'
+      - '*.gradle'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+concurrency:
+  group: app
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21 (corretto)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: corretto
+          cache: gradle
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          log-accepted-android-sdk-licenses: false
+
+      - name: Build with Gradle
+        run: ./gradlew --no-daemon bundleRelease
+
+      - name: Sign AAB
+        id: sign
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/bundle/release
+          signingKeyBase64: '${{ secrets.KEYSTORE }}'
+          alias: '${{ secrets.SIGNING_KEY_ALIAS }}'
+          keyStorePassword: '${{ secrets.SIGNING_STORE_PASSWORD }}'
+          keyPassword: '${{ secrets.SIGNING_KEY_PASSWORD }}'
+
+      - name: Upload app bundle as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-bundle
+          path: app/build/outputs/bundle/release/app-release.aab
+          retention-days: 2
