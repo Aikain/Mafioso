@@ -9,9 +9,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -79,7 +76,7 @@ fun PlayerDialog(
                         )
                         if (!player.alive)
                             Icon(
-                                imageVector = Icons.Default.Close,
+                                painter = painterResource(R.drawable.close),
                                 contentDescription = stringResource(R.string.killed),
                                 tint = Color.Red,
                                 modifier = Modifier
@@ -90,7 +87,7 @@ fun PlayerDialog(
                     }
                 } ?: run {
                     Icon(
-                        imageVector = Icons.Default.Person,
+                        painter = painterResource(R.drawable.person),
                         contentDescription = null,
                         modifier = Modifier
                             .fillMaxWidth()

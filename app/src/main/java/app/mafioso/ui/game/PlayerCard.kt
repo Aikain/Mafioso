@@ -9,9 +9,6 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -85,7 +82,7 @@ fun PlayerCard(
                         )
                         if (!player.alive)
                             Icon(
-                                imageVector = Icons.Default.Close,
+                                painter = painterResource(R.drawable.close),
                                 contentDescription = stringResource(R.string.killed),
                                 tint = Color.Red,
                                 modifier = Modifier
@@ -96,7 +93,7 @@ fun PlayerCard(
                 }
             } ?: run {
                 Icon(
-                    imageVector = Icons.Default.Person,
+                    painter = painterResource(R.drawable.person),
                     contentDescription = null,
                     modifier = Modifier.fillMaxSize(.8f)
                 )
