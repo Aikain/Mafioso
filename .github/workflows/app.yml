@@ -21,17 +21,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
 
       - name: Set up JDK 21 (corretto)
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5.2.0
         with:
           java-version: '21'
           distribution: corretto
           cache: gradle
 
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4.0.1
         with:
           log-accepted-android-sdk-licenses: false
 
@@ -49,7 +49,7 @@ jobs:
           keyPassword: '${{ secrets.SIGNING_KEY_PASSWORD }}'
 
       - name: Upload app bundle as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: app-bundle
           path: app/build/outputs/bundle/release/app-release.aab
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.2
 
       - name: Download app bundle from artifact
         uses: actions/download-artifact@v4
@@ -75,14 +75,14 @@ jobs:
 
       - name: Authenticate to Google Cloud
         id: auth
-        uses: google-github-actions/auth@v2
+        uses: google-github-actions/auth@v3
         with:
           project_id: aikain-mafioso
           workload_identity_provider: projects/184973361127/locations/global/workloadIdentityPools/github/providers/github
           service_account: github-actions@aikain-mafioso.iam.gserviceaccount.com
 
       - name: Publish to Play Store
-        uses: r0adkll/upload-google-play@v1
+        uses: r0adkll/upload-google-play@v1.1.5
         with:
           serviceAccountJson: ${{ steps.auth.outputs.credentials_file_path }}
           packageName: app.mafioso
