@@ -48,4 +48,5 @@
 
     <string name="villager_name">Kansa</string>
     <string name="villager_description">Olet tavallinen kansalainen. Nukut sikeästi koko yön.</string>
+    <string name="back_to_home_screen">Siirry takaisin etusivulle</string>
 </resources>
