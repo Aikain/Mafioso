@@ -10,6 +10,11 @@ import ts from 'typescript-eslint';
 export default defineConfig(
     {
         files: ['**/*.{mjs,ts,tsx}'],
+        languageOptions: {
+            parserOptions: {
+                project: './tsconfig.json',
+            },
+        },
         settings: {
             react: {
                 version: 'detect',
