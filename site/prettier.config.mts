@@ -1,5 +1,6 @@
-/** @type {import("prettier").Options} */
-const prettierConfig = {
+import { type Options } from 'prettier';
+
+const prettierConfig: Options = {
     endOfLine: 'auto',
     bracketSameLine: true,
     jsxSingleQuote: true,

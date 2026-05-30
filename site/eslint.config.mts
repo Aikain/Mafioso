@@ -4,17 +4,12 @@ import compat from 'eslint-plugin-compat';
 import prettier from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
+import { defineConfig } from 'eslint/config';
 import ts from 'typescript-eslint';
 
-export default ts.config(
+export default defineConfig(
     {
         files: ['**/*.{mjs,ts,tsx}'],
-        languageOptions: {
-            parserOptions: {
-                projectService: true,
-                tsconfigRootDir: import.meta.dirname,
-            },
-        },
         settings: {
             react: {
                 version: 'detect',
@@ -25,9 +20,11 @@ export default ts.config(
     js.configs.recommended,
     ts.configs.strictTypeChecked,
     ts.configs.stylisticTypeChecked,
+
     react.configs.flat.recommended,
     react.configs.flat['jsx-runtime'],
-    reactHooks.configs['recommended-latest'],
+    reactHooks.configs.flat['recommended-latest'],
+
     {
         name: 'next/recommended',
         plugins: { '@next/next': nextjs },
