@@ -42,7 +42,7 @@ jobs:
           cache-dependency-path: site/yarn.lock
 
       - name: Restore cache
-        uses: actions/cache@v6.0.0
+        uses: actions/cache@v6.1.0
         with:
           path: |
             .next/cache
