@@ -1,7 +1,7 @@
 {
     "name": "site",
     "version": "0.1.0",
-    "packageManager": "yarn@4.15.0",
+    "packageManager": "yarn@4.17.1",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -9,30 +9,29 @@
         "start": "npx serve@latest out",
         "postinstall": "next telemetry disable",
         "lint": "eslint --flag unstable_native_nodejs_ts_config src --color",
-        "ts:check": "tsc --noemit",
-        "prettier": "prettier --write 'src/**/*.{ts,tsx,scss}' '*.{m,}{j,t}s' package.json tsconfig.json"
+        "check-types": "tsc --noemit",
+        "format": "prettier --write 'src/**/*.{ts,tsx,scss}' '*.{m,}{j,t}s' package.json tsconfig.json"
     },
     "dependencies": {
-        "next": "16.2.6",
-        "react": "19.2.6",
-        "react-dom": "19.2.6",
-        "sass": "^1.100.0"
+        "next": "16.2.10",
+        "react": "19.2.7",
+        "react-dom": "19.2.7",
+        "sass": "^1.101.0"
     },
     "devDependencies": {
         "@microsoft/eslint-formatter-sarif": "^3.1.0",
-        "@next/eslint-plugin-next": "16.2.6",
+        "@next/eslint-plugin-next": "16.2.10",
         "@trivago/prettier-plugin-sort-imports": "^6.0.2",
-        "@types/node": "24.12.4",
-        "@types/react": "19.2.15",
+        "@types/node": "24.13.3",
+        "@types/react": "19.2.17",
         "@types/react-dom": "19.2.3",
-        "eslint": "^9.39.4",
-        "eslint-config-next": "16.2.6",
+        "eslint": "^9.39.5",
+        "eslint-config-next": "16.2.10",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-compat": "^7.0.2",
-        "eslint-plugin-prettier": "^5.5.5",
-        "prettier": "3.8.3",
-        "prettier-eslint": "^16.4.2",
+        "eslint-plugin-prettier": "^5.5.6",
+        "prettier": "3.9.5",
         "typescript": "6.0.3",
-        "typescript-eslint": "^8.60.0"
+        "typescript-eslint": "^8.64.0"
     }
 }
