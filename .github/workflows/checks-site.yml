@@ -68,5 +68,5 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Run ts:check
-        run: yarn ts:check
+      - name: Run check-types
+        run: yarn check-types

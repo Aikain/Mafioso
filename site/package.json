@@ -9,8 +9,8 @@
         "start": "npx serve@latest out",
         "postinstall": "next telemetry disable",
         "lint": "eslint --flag unstable_native_nodejs_ts_config src --color",
-        "ts:check": "tsc --noemit",
-        "prettier": "prettier --write 'src/**/*.{ts,tsx,scss}' '*.{m,}{j,t}s' package.json tsconfig.json"
+        "check-types": "tsc --noemit",
+        "format": "prettier --write 'src/**/*.{ts,tsx,scss}' '*.{m,}{j,t}s' package.json tsconfig.json"
     },
     "dependencies": {
         "next": "16.2.10",
